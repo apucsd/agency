@@ -1,4 +1,8 @@
+'use client';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import MarqueeSection from './marquee';
+
 
 export default function HeroSection() {
       return (
@@ -9,7 +13,24 @@ export default function HeroSection() {
 
                   {/* Hero Content */}
                   <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center relative z-10">
-                        <div className="max-w-4xl mx-auto">
+                        <div className="mx-auto">
+                              {/* Hero Video */}
+                              <video
+                                src="/videos/globe.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                               onEnded={
+                                    (e) => {
+                                        const video = e.target as HTMLVideoElement;
+                                        video.currentTime = 0;
+                                        video.play();
+                                    }
+                               }
+                                className="absolute bg-black bg-blend-overlay  inset-0 w-full  z-[-1] h-[calc(100vh-100px)] object-cover"
+                              />
+                               <div className="absolute inset-0 bg-black/30 z-[-1]" />
                               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
                                     We Build Brands
                                     <br />
@@ -26,125 +47,7 @@ export default function HeroSection() {
                               </Button>
                         </div>
                   </div>
-
-                  {/* landscape carousel */}
-                  <div className="absolute bottom-20 left-0 right-0 h-36 overflow-hidden">
-                        <div className="relative h-full">
-                              <div className="flex items-center h-full transform skew-y-[3deg] animate-scroll-left">
-                                    <div className="flex items-center gap-8 bg-secondary text-white font-semibold text-lg whitespace-nowrap">
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-                  
-                  <div className="absolute bg bottom-20 left-0 right-0 h-36 overflow-hidden">
-                        <div className="relative h-full">
-                              <div className="flex items-center h-full transform skew-y-[-3deg] animate-scroll-left">
-                                    <div className="flex items-center gap-8 text-white bg-primary font-semibold text-lg whitespace-nowrap">
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                          <span className="flex items-center gap-2">
-                                                <span className="text-white">✦</span>
-                                                Social Media Marketing
-                                                <span className="text-primary">✦</span>
-                                          </span>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
+<MarqueeSection />
             </div>
       );
 }
