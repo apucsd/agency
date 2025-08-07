@@ -10,7 +10,7 @@ export default function HeroSection() {
       const isInView = useInView(ref, { once: true });
 
       return (
-            <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] px-6 text-center relative z-10">
+            <div className="flex flex-col items-center justify-center h-screen px-6 text-center relative z-10">
                   <video
                         ref={ref}
                         src="/videos/globe.mp4"
@@ -23,18 +23,18 @@ export default function HeroSection() {
                               video.currentTime = 0;
                               video.play();
                         }}
-                        className="absolute  inset-0 w-full  z-[-1] h-[calc(100vh-100px)] object-cover"
+                        className="absolute  inset-0 w-full  z-[-1] h-screen object-cover"
                   />
-                  <div className="absolute h-[calc(100vh-100px)] inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-[-1]" />
+                  <div className="absolute h-screen inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-[-1]" />
                   <div className="mx-auto">
                         {/* Hero Video */}
 
                         <div className=" w-full h-full">
                               <div>
-                                    <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-8">
+                                    <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-8 bg-clip-text bg-gradient-to-r from-[#d3d847] to-[#c67700]">
                                           We Build Brands
                                           <br />
-                                          <div className="inline-block">
+                                          <div className="inline-block ">
                                                 <AnimatePresence>
                                                       {text.split('').map((char, i) => (
                                                             <motion.span
@@ -42,7 +42,7 @@ export default function HeroSection() {
                                                                   initial={{ opacity: 0, y: 20 }}
                                                                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                                                                   transition={{ duration: 0.5, delay: i * 0.05 }}
-                                                                  className="inline-block text-primary"
+                                                                  className="inline-block text-[#fbe30ae5]"
                                                             >
                                                                   {char === ' ' ? <span>&nbsp;</span> : char}
                                                             </motion.span>

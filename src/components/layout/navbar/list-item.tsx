@@ -18,7 +18,7 @@ type TListItemProps = {
 
 const ListItem = ({ item }: TListItemProps) => {
   return (
-    <li>
+    <li className='list-none'>
       <NavigationMenuLink asChild>
         <Link
           href={item.href}
@@ -28,7 +28,7 @@ const ListItem = ({ item }: TListItemProps) => {
         >
           <div className="relative">
             {item.image && (
-              <div className="relative h-40 w-full overflow-hidden">
+              <div className="relative h-32 w-full overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}

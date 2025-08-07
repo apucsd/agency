@@ -1,7 +1,8 @@
 import HeroSection from '@/components/pages/home/hero/hero-section';
 import React from 'react';
 
-const HomePage = () => {
+const HomePage = async () => {
+  
     return (
         <div>
            <HeroSection />

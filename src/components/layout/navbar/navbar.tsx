@@ -5,7 +5,7 @@ import { Logo } from './logo';
 
 const Navbar = () => {
       return (
-            <nav className="container h-[100px]">
+            <nav className="container absolute top-0 left-0 right-0 z-50 text-white h-[100px]">
                   <div className="h-full flex items-center justify-between mx-auto px-4">
                         <Logo />
 
