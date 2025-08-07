@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { AnimatePresence, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -13,7 +13,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-center justify-center h-screen px-6 text-center relative z-10">
                   <video
                         ref={ref}
-                        src="/videos/globe.mp4"
+                        src="/videos/globe-new.mp4"
                         autoPlay
                         loop
                         muted
@@ -25,7 +25,7 @@ export default function HeroSection() {
                         }}
                         className="absolute  inset-0 w-full  z-[-1] h-screen object-cover"
                   />
-                  <div className="absolute h-screen inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-[-1]" />
+                  <div className="absolute h-screen inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-[-1]" />
                   <div className="mx-auto">
                         {/* Hero Video */}
 
@@ -42,7 +42,7 @@ export default function HeroSection() {
                                                                   initial={{ opacity: 0, y: 20 }}
                                                                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                                                                   transition={{ duration: 0.5, delay: i * 0.05 }}
-                                                                  className="inline-block text-[#fbe30ae5]"
+                                                                  className="inline-block text-[white]"
                                                             >
                                                                   {char === ' ' ? <span>&nbsp;</span> : char}
                                                             </motion.span>
