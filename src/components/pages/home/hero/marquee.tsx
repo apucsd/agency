@@ -27,10 +27,10 @@ export default function MarqueeSection() {
   return (
     <>
       {/* 🔺 Top Marquee: Left scroll */}
-      <div className="absolute z-10 bottom-32 left-0 right-0 h-24 overflow-hidden transform skew-y-[4deg]">
-        <div className="bg-secondary h-full w-full flex items-center">
+      <div className="absolute z-10 bottom-32 left-0 right-0 h-18 overflow-hidden transform skew-y-[4deg]">
+        <div className="bg-secondary h-18 w-full flex items-center">
           <motion.div
-            className="flex items-center gap-8 text-white text-[20px] md:text-[32px] font-semibold whitespace-nowrap w-max"
+            className="flex items-center gap-8 text-white text-[20px] md:text-[28px] font-semibold whitespace-nowrap w-max"
             animate={{ x: ['0%', '-50%'] }}
             transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           >
@@ -41,10 +41,10 @@ export default function MarqueeSection() {
       </div>
 
       {/* 🔻 Bottom Marquee: Right scroll */}
-      <div className="absolute z-10 bottom-20 left-0 right-0 h-24 overflow-hidden transform skew-y-[-4deg]">
-        <div className="bg-primary h-full w-full flex items-center">
+      <div className="absolute z-10 bottom-20 left-0 right-0 h-18 overflow-hidden transform skew-y-[-4deg]">
+        <div className="bg-primary h-18 w-full flex items-center">
           <motion.div
-            className="flex items-center gap-8 text-white text-[20px] md:text-[32px] font-semibold whitespace-nowrap w-max"
+            className="flex items-center gap-8 text-white text-[20px] md:text-[28px] font-semibold whitespace-nowrap w-max"
             animate={{ x: ['-50%', '0%'] }}
             transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           >
