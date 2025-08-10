@@ -1,6 +1,7 @@
 import BannerSection from '@/components/pages/home/banner/banner-section';
 import FeaturedSection from '@/components/pages/home/featured-section/featured-section';
 import HeroSection from '@/components/pages/home/hero/hero-section';
+import StatsSection from '@/components/pages/home/stats/stats-section';
 import React from 'react';
 
 const HomePage = async () => {
@@ -10,6 +11,7 @@ const HomePage = async () => {
            <HeroSection />
            <BannerSection />
            <FeaturedSection />
+           <StatsSection />
         </div>
     );
 };
