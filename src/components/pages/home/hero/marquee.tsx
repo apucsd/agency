@@ -22,7 +22,6 @@ const MarqueeSection = () => {
             { id: 18, img: '/images/brands/svg18.svg' },
             { id: 19, img: '/images/brands/svg19.svg' },
             { id: 20, img: '/images/brands/svg20.svg' },
-            { id: 21, img: '/images/brands/svg21.svg' },
       ];
 
       return (

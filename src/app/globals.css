@@ -16,7 +16,7 @@
     @apply max-w-screen-xl mx-auto;
   }
   .primary-gradient {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-medium text-sm whitespace-nowrap;
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-medium text-sm whitespace-nowrap cursor-pointer;
   }
 }
 
