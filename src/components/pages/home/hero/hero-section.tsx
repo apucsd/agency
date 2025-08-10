@@ -4,6 +4,7 @@ import { AnimatePresence, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
+import MarqueeSection from './marquee';
 export default function HeroSection() {
       const text = 'That People Love';
       const ref = useRef(null);
@@ -64,6 +65,7 @@ export default function HeroSection() {
                               </div>
                         </div>
                   </div>
+                  <MarqueeSection />
             </div>
       );
 }
