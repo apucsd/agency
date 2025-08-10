@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const MarqueeSection = () => {
@@ -30,7 +31,9 @@ const MarqueeSection = () => {
                         <div className="Marquee-content">
                               {brands.map((brand, index) => (
                                     <div key={`${brand.id}-${index}`} className="inline-block mx-8">
-                                          <img
+                                          <Image
+                                                width={500}
+                                                height={500}
                                                 src={brand.img}
                                                 alt={brand.id.toString()}
                                                 className="h-8 w-auto object-contain  hover:opacity-100 transition-opacity"

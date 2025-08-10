@@ -65,7 +65,7 @@ export default function StatsSection() {
 
                         <div>
                               <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-8 bg-clip-text bg-gradient-to-r from-[#d3d847] to-[#c67700]">
-                                    We've got you covered with the latest in digital
+                                    We have got you covered with the latest in digital
                               </h1>
                         </div>
                         <div className="w-full max-w-6xl mx-auto p-6">
