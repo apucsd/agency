@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
         }
     ];
     const [isOpen, setIsOpen] = useState(1);
-    const handleToggle = (idx) => setIsOpen((prevIdx) => (prevIdx == idx ? null : idx));
+    const handleToggle = (idx:any) => setIsOpen((prevIdx) => (prevIdx == idx ? null : idx));
     return (
         <div>
             <div className="flex h-[800px] items-center justify-center gap-4">
