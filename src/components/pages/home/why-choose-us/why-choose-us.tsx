@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
                             />
                             <div className={`${activeIndex === idx ? 'opacity-100' : 'opacity-0'} absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent duration-500 ease-in-out`}>
                                 <div className={`relative text-center text-white/80 ${activeIndex === idx ? 'top-1/2 -translate-y-1/2 opacity-100' : 'top-3/4 opacity-0'} duration-500 ease-in-out px-4`}>
-                                    <h2 className="text-2xl font-bold mb-3">{slide.title}</h2>
+                                    <h2 className="text-2xl font-bold mb-3 text-primary">{slide.title}</h2>
                                     <p className={`text-sm text-white/80 ${activeIndex === idx ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>
                                         {slide.description}
                                     </p>

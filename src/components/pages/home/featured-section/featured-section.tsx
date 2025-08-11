@@ -191,9 +191,9 @@ export default function FeaturedSections() {
             <div className='radial-bg '>
                   <div
                   
-                  style={{
-                        boxShadow: '0 0 2px #1DCDF5, 0 0 5px #195AFE, 0 0 2px #195AFE, 0 0 60px #195AFE',
-                  }}
+                  // style={{
+                  //       boxShadow: '0 0 2px #1DCDF5, 0 0 5px #195AFE, 0 0 2px #195AFE, 0 0 60px #195AFE',
+                  // }}
                   className='text-white text-center p-8'>
                         <h2 className="text-primary text-5xl font-bold mb-4">What We Do</h2>
                         <p className=" mb-6">Here is what we do</p>
