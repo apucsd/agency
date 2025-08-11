@@ -31,4 +31,4 @@ jobs:
                             --token=$VERCEL_TOKEN \
                             --scope=$VERCEL_ORG_ID \
                             --confirm --cwd . \
-                            --project=$VERCEL_PROJECT_ID
+                            
