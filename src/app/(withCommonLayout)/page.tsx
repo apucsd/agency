@@ -13,7 +13,7 @@ const HomePage = async () => {
            <BannerSection />
            <FeaturedSection />
            <StatsSection />
-           <WhyChooseUs />
+           {/* <WhyChooseUs /> */}
         </div>
     );
 };
