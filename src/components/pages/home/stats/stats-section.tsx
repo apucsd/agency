@@ -1,6 +1,6 @@
 'use client';
 import { useInView } from 'framer-motion';
-import { Globe, Edit3, Package, BarChart3, FileText, Monitor, Search, Building2, Users, Award, Code, Clock, Percent } from 'lucide-react';
+import { Globe, BarChart3, Monitor, Users, Award, Code, Clock, Percent } from 'lucide-react';
 import { useRef } from 'react';
 import CountUp from 'react-countup';
 export default function StatsSection() {
@@ -64,8 +64,8 @@ export default function StatsSection() {
                         {/* Hero Video */}
 
                         <div>
-                              <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-8 bg-clip-text bg-gradient-to-r from-[#d3d847] to-[#c67700]">
-                                    We have got you covered with the latest in digital
+                              <h1 className="text-4xl text-primary md:text-5xl lg:text-6xl font-bold mb-8 bg-clip-text bg-gradient-to-r from-[#d3d847] to-[#c67700]">
+                                    What We Done So Far
                               </h1>
                         </div>
                         <div className="w-full max-w-6xl mx-auto p-6">

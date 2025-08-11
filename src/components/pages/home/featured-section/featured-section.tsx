@@ -25,6 +25,24 @@ const features = [
             ],
       },
       {
+            title: 'App Development',
+            description: 'We develop mobile apps for iOS and Android.',
+            media: [
+                  {
+                        type: 'video',
+                        src: '/videos/app2.mp4',
+                        alt: 'App Development Demo',
+                        poster: '/images/thumbnails/app-dev-thumb.jpg'
+                  },
+                  {
+                        type: 'video',
+                        src: '/videos/app1.mp4',
+                        alt: 'App Development Demo 2',
+                        poster: '/images/thumbnails/app-dev-thumb-2.jpg'
+                  },
+            ],
+      },
+      {
             title: 'UI/UX Design',
             description: 'We create stunning user interfaces and experiences.',
             media: [
@@ -46,7 +64,7 @@ const features = [
 
 type TFeature = (typeof features)[0];
 
-function GamingSection({ feature, index }: { feature: TFeature; index: number }) {
+function FeaturedSection({ feature, index }: { feature: TFeature; index: number }) {
       const sectionRef = useRef(null);
       const leftImgRef = useRef(null);
       const rightImgRef = useRef(null);
@@ -119,16 +137,16 @@ function GamingSection({ feature, index }: { feature: TFeature; index: number })
             <section
                  
                   ref={sectionRef}
-                  className="relative min-h-screen radial-bg  flex items-center justify-center overflow-hidden"
+                  className="relative min-h-screen  flex items-center justify-center overflow-hidden"
             >
                   {/* Left Video */}
-                  <div ref={leftImgRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-[50%] p-4">
+                  <div ref={leftImgRef} className="absolute rounded-[20px] left-0 top-1/2 -translate-y-1/2 w-[50%] p-4">
                         <video
                               autoPlay
                               loop
                               muted
                               playsInline
-                              className="w-full h-[100vh] rounded-xl shadow-2xl"
+                              className="w-full object-cover h-[70vh] rounded-[20px] shadow-2xl"
                               poster={feature.media[0].poster}
                         >
                               <source src={feature.media[0].src} type="video/mp4" />
@@ -137,13 +155,13 @@ function GamingSection({ feature, index }: { feature: TFeature; index: number })
                   </div>
 
                   {/* Right Video */}
-                  <div ref={rightImgRef} className="absolute right-0 top-1/2 -translate-y-1/2 w-[50%] p-4">
+                  <div ref={rightImgRef} className="absolute rounded-[20px] right-0 top-1/2 -translate-y-1/2 w-[50%] p-4">
                         <video
                               autoPlay
                               loop
                               muted
                               playsInline
-                              className="w-full h-[100vh] rounded-xl shadow-2xl"
+                              className="w-full object-cover h-[70vh] rounded-[20px] shadow-2xl"
                               poster={feature.media[1].poster}
                         >
                               <source src={feature.media[1].src} type="video/mp4" />
@@ -168,11 +186,23 @@ function GamingSection({ feature, index }: { feature: TFeature; index: number })
       );
 }
 
-export default function GamingSections() {
+export default function FeaturedSections() {
       return (
-            <div>
+            <div className='radial-bg '>
+                  <div
+                  
+                  style={{
+                        boxShadow: '0 0 2px #1DCDF5, 0 0 5px #195AFE, 0 0 2px #195AFE, 0 0 60px #195AFE',
+                  }}
+                  className='text-white text-center p-8'>
+                        <h2 className="text-primary text-5xl font-bold mb-4">What We Do</h2>
+                        <p className=" mb-6">Here is what we do</p>
+                  </div>
+
+
+
                   {features.map((feature, idx) => (
-                        <GamingSection key={idx} feature={feature} index={idx} />
+                        <FeaturedSection key={idx} feature={feature} index={idx} />
                   ))}
             </div>
       );
