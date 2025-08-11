@@ -11,7 +11,7 @@ export default function HeroSection() {
       const isInView = useInView(ref, { once: true });
 
       return (
-            <div className="flex flex-col items-center justify-center h-screen px-6 text-center relative z-10">
+            <div className="flex radial-bg flex-col items-center justify-center h-screen px-6 text-center relative z-10">
                   <video
                         ref={ref}
                         src="/videos/globe-new.mp4"
@@ -24,16 +24,16 @@ export default function HeroSection() {
                               video.currentTime = 0;
                               video.play();
                         }}
-                        className="absolute  inset-0 w-full  z-[-1] h-screen object-cover"
+                        className="absolute hidden lg:block  inset-0 w-full  z-[-1] h-screen object-cover"
                   />
-                  <div className="absolute h-screen inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-[-1]" />
+                  <div className="absolute h-screen inset-0 bg-gradient-to-t from-black/5 via-black/20 to-transparent z-[-1]" />
                   <div className="mx-auto">
                         {/* Hero Video */}
 
                         <div className=" w-full h-full">
                               <div>
                                     <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-8 bg-clip-text bg-gradient-to-r from-[#d3d847] to-[#c67700]">
-                                          We Build Brands
+                                          We Build <span className='text-primary'>Brands</span>
                                           <br />
                                           <div className="inline-block ">
                                                 <AnimatePresence>

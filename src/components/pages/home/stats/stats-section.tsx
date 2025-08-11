@@ -70,7 +70,7 @@ export default function StatsSection() {
                         </div>
                         <div className="w-full max-w-6xl mx-auto p-6">
                               <div
-                                    className="bg-[radial-gradient(circle,_#1C254B,_#030C1C)] rounded-[20px] p-8 relative"
+                                    className="radial-bg rounded-[20px] p-8 relative"
                                     style={{
                                           boxShadow: '0 0 2px #1DCDF5, 0 0 5px #195AFE, 0 0 2px #195AFE, 0 0 60px #195AFE',
                                     }}

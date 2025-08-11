@@ -1,7 +1,12 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const MarqueeSection = () => {
+      const [isMounted, setIsMounted] = useState(false);
+      
+      useEffect(() => {
+            setIsMounted(true);
+      }, []);
       const brands = [
             { id: 1, img: '/images/brands/svg1.svg' },
             { id: 2, img: '/images/brands/svg2.svg' },
@@ -26,45 +31,52 @@ const MarqueeSection = () => {
       ];
 
       return (
-            <div className="absolute bottom-0 w-full overflow-hidden py-6">
+            <div className="absolute bottom-0 w-full overflow-hidden py-6 bg-transparent">
                   <div className="marque-container">
-                        <div className="Marquee-content">
-                              {brands.map((brand, index) => (
+                        <div className={`Marquee-content ${isMounted ? 'animate-marquee' : 'opacity-0'}`}>
+                              {[...brands, ...brands].map((brand, index) => (
                                     <div key={`${brand.id}-${index}`} className="inline-block mx-8">
                                           <Image
-                                                width={500}
-                                                height={500}
+                                                width={80}
+                                                height={32}
                                                 src={brand.img}
-                                                alt={brand.id.toString()}
-                                                className="h-8 w-auto object-contain  hover:opacity-100 transition-opacity"
-                                                style={{ maxWidth: '120px' }}
+                                                alt={`Brand ${brand.id}`}
+                                                className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                                                style={{ maxWidth: '120px', minWidth: '80px' }}
+                                                loading="lazy"
                                           />
                                     </div>
                               ))}
                         </div>
                   </div>
-                  <style jsx>{`
-                        .marque-container {
-                              width: 100%;
-                              overflow: hidden;
-                              white-space: nowrap;
+            <style jsx>{`
+                  .marque-container {
+                        width: 100%;
+                        overflow: hidden;
+                        position: relative;
+                  }
+                  .Marquee-content {
+                        display: inline-block;
+                        white-space: nowrap;
+                        will-change: transform;
+                        transition: opacity 0.5s ease-out;
+                  }
+                  .animate-marquee {
+                        animation: marquee 60s linear infinite;
+                        animation-play-state: running;
+                        opacity: 1;
+                  }
+                  .Marquee-content:hover {
+                        animation-play-state: paused;
+                  }
+                  @keyframes marquee {
+                        0% {
+                              transform: translateX(0);
                         }
-                        .Marquee-content {
-                              display: inline-block;
-                              white-space: nowrap;
-                              animation: marquee 40s linear infinite running;
+                        100% {
+                              transform: translateX(-50%);
                         }
-                        .Marquee-content:hover {
-                              animation-play-state: paused;
-                        }
-                        @keyframes marquee {
-                              0% {
-                                    transform: translateX(0);
-                              }
-                              100% {
-                                    transform: translateX(-50%);
-                              }
-                        }
+                  }
                   `}</style>
             </div>
       );

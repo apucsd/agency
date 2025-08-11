@@ -153,7 +153,7 @@ function GamingSection({ feature, index }: { feature: TFeature; index: number })
             <section
                  
                   ref={sectionRef}
-                  className="relative min-h-screen bg-[radial-gradient(circle,_#1C254B,_#030C1C)]  flex items-center justify-center overflow-hidden"
+                  className="relative min-h-screen radial-bg  flex items-center justify-center overflow-hidden"
             >
                   {/* Left Image */}
                   <div ref={leftImgRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-[50%] p-4">

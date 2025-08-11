@@ -18,6 +18,9 @@
   .primary-gradient {
     @apply bg-[#7CCF00] text-black rounded-lg hover:bg-[#c9f685e3] transition-all duration-200 font-medium text-sm whitespace-nowrap cursor-pointer;
   }
+  .radial-bg {
+    @apply bg-[radial-gradient(circle,_#1C254B,_#030C1C)]
+  }
 }
 
 @theme inline {
@@ -66,7 +69,7 @@
   --card-foreground: black;
   --popover: white;
   --popover-foreground: black;
-  --primary: #104388;
+  --primary: #7CCF00;
   --primary-foreground: white;
   --secondary: #1772e0e6;
   --secondary-foreground: white;
