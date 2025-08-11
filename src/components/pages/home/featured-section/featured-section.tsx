@@ -9,70 +9,36 @@ const features = [
       {
             title: 'Web Development',
             description: 'We create immersive gaming experiences for all platforms.',
-            images: [
+            media: [
                   {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'left',
+                        type: 'video',
+                        src: '/videos/web2.mp4',
+                        alt: 'Web Development Demo',
+                        poster: '/images/thumbnails/web-dev-thumb.jpg'
                   },
                   {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'right',
-                  },
-            ],
-      },
-      {
-            title: 'Mobile App Development',
-            description: 'We create immersive gaming experiences for all platforms.',
-            images: [
-                  {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'left',
-                  },
-                  {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'right',
+                        type: 'video',
+                        src: '/videos/web1.mp4',
+                        alt: 'Web Development Demo 2',
+                        poster: '/images/thumbnails/web-dev-thumb-2.jpg'
                   },
             ],
       },
       {
             title: 'UI/UX Design',
-            description: 'We create immersive gaming experiences for all platforms.',
-            images: [
+            description: 'We create stunning user interfaces and experiences.',
+            media: [
                   {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'left',
+                        type: 'video',
+                        src: '/videos/ux1.mp4',
+                        alt: 'UI/UX Design Demo',
+                        poster: '/images/thumbnails/ui-ux-thumb.jpg'
                   },
                   {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'right',
-                  },
-            ],
-      },
-      {
-            title: 'SEO',
-            description: 'We create immersive gaming experiences for all platforms.',
-            images: [
-                  {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'left',
-                  },
-                  {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'right',
-                  },
-            ],
-      },
-      {
-            title: 'Branding',
-            description: 'We create immersive gaming experiences for all platforms.',
-            images: [
-                  {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'left',
-                  },
-                  {
-                        src: 'https://images.unsplash.com/photo-1511485977113-f34c92461ad9?auto=format&fit=crop&w=1170&q=80',
-                        alt: 'right',
+                        type: 'video',
+                        src: '/videos/ux2.mp4',
+                        alt: 'UI/UX Design Demo 2',
+                        poster: '/images/thumbnails/ui-ux-thumb-2.jpg'
                   },
             ],
       },
@@ -155,14 +121,34 @@ function GamingSection({ feature, index }: { feature: TFeature; index: number })
                   ref={sectionRef}
                   className="relative min-h-screen radial-bg  flex items-center justify-center overflow-hidden"
             >
-                  {/* Left Image */}
+                  {/* Left Video */}
                   <div ref={leftImgRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-[50%] p-4">
-                        <img src={feature.images[0].src} alt={feature.images[0].alt} className="w-full rounded-xl " />
+                        <video
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="w-full h-[100vh] rounded-xl shadow-2xl"
+                              poster={feature.media[0].poster}
+                        >
+                              <source src={feature.media[0].src} type="video/mp4" />
+                              Your browser does not support the video tag.
+                        </video>
                   </div>
 
-                  {/* Right Image */}
+                  {/* Right Video */}
                   <div ref={rightImgRef} className="absolute right-0 top-1/2 -translate-y-1/2 w-[50%] p-4">
-                        <img src={feature.images[1].src} alt={feature.images[1].alt} className="w-full rounded-xl " />
+                        <video
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="w-full h-[100vh] rounded-xl shadow-2xl"
+                              poster={feature.media[1].poster}
+                        >
+                              <source src={feature.media[1].src} type="video/mp4" />
+                              Your browser does not support the video tag.
+                        </video>
                   </div>
 
                   {/* Center Text */}
