@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
                     if (prev === null || prev === sliders.length - 1) return 0;
                     return prev + 1;
                 });
-            }, 1000);
+            }, 2000);
         }
 
         return () => {
