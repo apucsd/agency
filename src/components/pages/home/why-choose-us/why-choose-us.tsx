@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function WhyChooseUs() {
     const sliders = [
@@ -26,6 +26,37 @@ export default function WhyChooseUs() {
         }
     ];
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    const [isHovered, setIsHovered] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout>(null);
+
+    useEffect(() => {
+        if (!isHovered) {
+            intervalRef.current = setInterval(() => {
+                setActiveIndex(prev => {
+                    if (prev === null || prev === sliders.length - 1) return 0;
+                    return prev + 1;
+                });
+            }, 1000);
+        }
+
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, [isHovered, sliders.length]);
+
+    const handleMouseEnter = (index: number) => {
+        setIsHovered(true);
+        setActiveIndex(index);
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
     return (
         <div className='min-h-screen radial-bg py-10 md:py-20'>
             <div className='container px-4 sm:px-6 lg:px-8 mx-auto'>
@@ -60,9 +91,9 @@ export default function WhyChooseUs() {
                     {sliders?.map((slide, idx) => (
                         <div
                             key={idx}
-                            onMouseEnter={() => setActiveIndex(idx)}
-                            onMouseLeave={() => setActiveIndex(0)}
-                            className={`${activeIndex === idx ? 'w-[400px] opacity-100 shadow-lg' : 'w-[200px] opacity-70 grayscale hover:opacity-90'} ${idx % 2 === 0 ? 'translate-y-16' : ''} relative h-full duration-500 ease-in-out transition-all`}
+                            onMouseEnter={() => handleMouseEnter(idx)}
+                            onMouseLeave={handleMouseLeave}
+                            className={`${activeIndex === idx ? 'w-[400px] opacity-100 shadow-lg' : 'w-[200px] opacity-70 grayscale hover:opacity-90'} ${idx % 2 === 0 ? 'translate-y-16' : ''} relative h-full duration-500 ease-in-out transition-all cursor-pointer`}
                         >
                             <Image 
                                 src={slide.img} 
