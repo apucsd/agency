@@ -9,7 +9,7 @@ import {
       NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { NavigationMenuProps } from '@radix-ui/react-navigation-menu';
-import { BarChart3, Code, Palette, Search, ShoppingCart, Smartphone } from 'lucide-react';
+import { BarChart3, Code, Palette, Search, ServerCrashIcon, ShoppingCart, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import ListItem from './list-item';
 const services = [
@@ -61,25 +61,26 @@ const services = [
 const about = [
       {
             title: 'About Us',
-            href: '#',
-            description: 'Learn more about our company and our mission',
-            icon: <Code size={24} />,
-            image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+            href: '/about',
+            description: 'Discover our story, values, and what makes us different in the digital landscape',
+            icon: <BarChart3 size={24} />,
+            image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
       },
       {
             title: 'Our Team',
-            href: '#',
-            description: 'Learn more about our company and our mission',
-            icon: <Code size={24} />,
-            image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+            href: '/team',
+            description: 'Meet the talented professionals behind our creative solutions',
+            icon: <Smartphone size={24} />,
+            image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
       },
       {
             title: 'Portfolio',
-            href: '#',
-            description: 'Learn more about our company and our mission',
-            icon: <Code size={24} />,
-            image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+            href: '/portfolio',
+            description: 'Explore our successful projects and client success stories',
+            icon: <Palette size={24} />,
+            image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
       },
+      
 ]
 export const NavMenu = (props: NavigationMenuProps) => {
   

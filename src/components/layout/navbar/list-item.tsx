@@ -23,7 +23,7 @@ const ListItem = ({ item }: TListItemProps) => {
         <Link
           href={item.href}
           className={cn(
-            'group block rounded-xl overflow-hidden border bg-card transition-all duration-300 hover:shadow-xl focus:shadow-xl hover:-translate-y-1'
+            'group block rounded-xl overflow-hidden border bg-card'
           )}
         >
           <div className="relative">
@@ -34,7 +34,7 @@ const ListItem = ({ item }: TListItemProps) => {
                   alt={item.title}
                   width={400}
                   height={250}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover rounded-xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 {item.icon && (
@@ -46,7 +46,7 @@ const ListItem = ({ item }: TListItemProps) => {
             )}
 
             <div className="p-4 space-y-1">
-              <h3 className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-base text-primary font-medium transition-colors">
                 {item.title}
               </h3>
               <p className="text-sm text-muted-foreground line-clamp-2 leading-snug">
