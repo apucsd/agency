@@ -50,14 +50,14 @@ export default function StatsSection() {
       const ref = useRef(null);
       const isInView = useInView(ref, { once: true });
       return (
-            <div className="flex overflow-hidden bg-[#000921]  flex-col items- justify-start min-h-[130vh] px-6 text-center relative z-10">
+            <div className="flex overflow-hidden radial-bg md:bg-[#000921]  flex-col items- justify-start min-h-[130vh] px-6 text-center relative z-10">
                   <video
                         src="/videos/globe-new.mp4"
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="absolute bottom-0  w-full  z-[-1] min-h-[80vh] object-cover"
+                        className="absolute bottom-0 hidden md:block  w-full  z-[-1] min-h-[80vh] object-cover"
                   />
                   {/* <div className="absolute h-screen inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-[-1]" /> */}
                   <div className="container mt-20">

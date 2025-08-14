@@ -1,11 +1,14 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { NavMenu } from './nav-menu';
 import { NavigationSheet } from './navigation-sheet';
 import { Logo } from './logo';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+      const isHomePage = usePathname() === '/';
       return (
-            <nav className="container absolute top-0 left-0 right-0 z-50 text-white h-[100px]">
+            <nav className={`container ${isHomePage ? 'absolute text-white ' : 'static text-black'} top-0 left-0 right-0 z-50 h-[100px]`}>
                   <div className="h-full flex items-center justify-between mx-auto px-4">
                         <Logo />
 

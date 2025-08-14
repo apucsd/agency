@@ -9,9 +9,10 @@ import {
       NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { NavigationMenuProps } from '@radix-ui/react-navigation-menu';
-import { BarChart3, Code, Palette, Search, ServerCrashIcon, ShoppingCart, Smartphone } from 'lucide-react';
+import { BarChart3, Code, Palette, Search, ShoppingCart, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import ListItem from './list-item';
+import { useRouter } from 'next/navigation';
 const services = [
       {
             title: 'Web Design',
@@ -83,6 +84,7 @@ const about = [
       
 ]
 export const NavMenu = (props: NavigationMenuProps) => {
+      const router = useRouter();
   
 
       return (
@@ -90,7 +92,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
                   <NavigationMenuList className="gap-6 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
                         <NavigationMenuItem>
                               <NavigationMenuLink asChild>
-                                    <Link href="#">Home</Link>
+                                    <Link href="/">Home</Link>
                               </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
@@ -118,7 +120,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
                                                       <Button
                                                             size="default"
                                                             className="shrink-0 ml-4"
-                                                            onClick={() => console.log('Contact us clicked')}
+                                                            onClick={() => router.push('/contact-us')}
                                                       >
                                                             Contact Us
                                                       </Button>
@@ -150,7 +152,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
                                                       <Button
                                                             size="default"
                                                             className="shrink-0 ml-4"
-                                                            onClick={() => console.log('Contact us clicked')}
+                                                            onClick={() => router.push('/contact-us')}
                                                       >
                                                             Contact Us
                                                       </Button>
@@ -167,7 +169,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                               <NavigationMenuLink asChild>
-                                    <Link href="#">Contact Us</Link>
+                                    <Link href="/contact-us">Contact Us</Link>
                               </NavigationMenuLink>
                         </NavigationMenuItem>
                   </NavigationMenuList>
